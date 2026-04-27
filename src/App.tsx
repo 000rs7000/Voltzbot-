@@ -18,10 +18,28 @@ export default function App() {
 
   // Fetch games
   useEffect(() => {
-    fetch('/voltzbot.json')
-      .then(res => res.json())
-      .then(data => setGames(data))
-      .catch(err => console.error('Error fetching games:', err));
+    const loadGames = async () => {
+      try {
+        const res = await fetch('/voltzbot.json');
+        if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+        const data = await res.json();
+        setGames(data);
+      } catch (err) {
+        console.error('Error fetching games, using direct data:', err);
+        // Direct injection of major titles to ensure site is never empty
+        setGames([
+          { id: '1', title: "Duck Life 3", description: "Train your duck!", url: "https://studyhall.b-cdn.net/study/ducklife3/index.html", image: "https://images.crazygames.com/games/duck-life-3-evolution/cover-1582283030386.png?auto=format,compress&q=75&cs=strip&ch=DPR&w=1200&h=630&fit=crop" },
+          { id: '5', title: "Papa's Pancakeria", description: "Bake treats!", url: "https://studyhall.b-cdn.net/study/papaspancakeria/index.html", image: "https://images.crazygames.com/papas-pancakeria/20200830113110/papas-pancakeria-cover?auto=format,compress&q=75&cs=strip&ch=DPR&w=1200&h=630&fit=crop" },
+          { id: '6', title: "Friday Night Funkin'", description: "Rhythm battle!", url: "https://studyhall.b-cdn.net/study/fnf/index.html", image: "https://images.crazygames.com/friday-night-funkin/20210323114528/friday-night-funkin-cover?auto=format,compress&q=75&cs=strip&ch=DPR&w=1200&h=630&fit=crop" },
+          { id: '20', title: "Tunnel Rush", description: "Tunnel racing!", url: "https://studyhall.b-cdn.net/study/tunnelrush/index.html", image: "https://images.crazygames.com/tunnel-rush/20200830113110/tunnel-rush-cover?auto=format,compress&q=75&cs=strip&ch=DPR&w=1200&h=630&fit=crop" },
+          { id: '31', title: "Retro Bowl", description: "Manage your team!", url: "https://studyhall.b-cdn.net/study/retrobowl/index.html", image: "https://images.crazygames.com/retro-bowl/20220301111624/retro-bowl-cover?auto=format,compress&q=75&cs=strip&ch=DPR&w=1200&h=630&fit=crop" },
+          { id: '44', title: "Subway Surfers", description: "Endless runner!", url: "https://studyhall.b-cdn.net/study/subwaysurfers/index.html", image: "https://images.crazygames.com/games/subway-surfers/cover-1583226998184.png?auto=format,compress&q=75&cs=strip&ch=DPR&w=1200&h=630&fit=crop" },
+          { id: '47', title: "Minecraft", description: "Build and mine!", url: "https://studyhall.b-cdn.net/study/mc/index.html", image: "https://images.crazygames.com/minecraft-classic/20210211112441/minecraft-classic-cover?auto=format,compress&q=75&cs=strip&ch=DPR&w=1200&h=630&fit=crop" },
+          { id: '49', title: "FNAF", description: "Survival horror!", url: "https://studyhall.b-cdn.net/study2/310.html", image: "https://images.crazygames.com/five-nights-at-freddys/20200830113110/five-nights-at-freddys-cover?auto=format,compress&q=75&cs=strip&ch=DPR&w=1200&h=630&fit=crop" }
+        ]);
+      }
+    };
+    loadGames();
   }, []);
 
   // Theme effect
