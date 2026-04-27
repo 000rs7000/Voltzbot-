@@ -1,0 +1,37 @@
+[
+  {
+    "id": "1",
+    "title": "Retro Bowl",
+    "description": "Retro Bowl is the perfect game for the armchair quarterback to finally prove a point.",
+    "url": "https://gameads.poki.com/en/retro-bowl",
+    "image": "https://images.crazygames.com/retro-bowl/20220301111624/retro-bowl-cover?auto=format,compress&q=75&cs=strip&ch=DPR&w=1200&h=630&fit=crop"
+  },
+  {
+    "id": "2",
+    "title": "Subway Surfers",
+    "description": "Dash as fast as you can! Dodge the oncoming trains!",
+    "url": "https://poki.com/en/g/subway-surfers",
+    "image": "https://images.crazygames.com/games/subway-surfers/cover-1583226998184.png?auto=format,compress&q=75&cs=strip&ch=DPR&w=1200&h=630&fit=crop"
+  },
+  {
+    "id": "3",
+    "title": "Minecraft (Classic)",
+    "description": "Explore infinite worlds and build everything from the simplest of homes to the grandest of castles.",
+    "url": "https://classic.minecraft.net/",
+    "image": "https://images.crazygames.com/minecraft-classic/20210211112441/minecraft-classic-cover?auto=format,compress&q=75&cs=strip&ch=DPR&w=1200&h=630&fit=crop"
+  },
+  {
+    "id": "4",
+    "title": "Slope",
+    "description": "Drive your ball and follow the line in this endless runner game.",
+    "url": "https://www.crazygames.com/embed/slope",
+    "image": "https://images.crazygames.com/slope/20200830113110/slope-cover?auto=format,compress&q=75&cs=strip&ch=DPR&w=1200&h=630&fit=crop"
+  },
+  {
+    "id": "5",
+    "title": "1v1.LOL",
+    "description": "Build and battle in this online multiplayer shooter.",
+    "url": "https://1v1.lol/",
+    "image": "https://images.crazygames.com/1v1-lol/20200830113110/1v1-lol-cover?auto=format,compress&q=75&cs=strip&ch=DPR&w=1200&h=630&fit=crop"
+  }
+]
