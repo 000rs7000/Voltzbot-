@@ -6,8 +6,136 @@
     <title>My Google AI Studio App</title>
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <div id="app" class="min-h-screen">
+      <!-- Header -->
+      <header class="sticky top-0 z-10 border-b border-[var(--border)] bg-[var(--bg)]/80 backdrop-blur-md px-6 py-4">
+        <div class="max-w-7xl mx-auto flex items-center justify-between gap-4">
+          <div id="logo" class="flex items-center gap-2 cursor-pointer">
+            <div class="w-10 h-10 accent-bg rounded-lg flex items-center justify-center text-white font-bold text-xl">V</div>
+            <h1 class="hidden sm:block text-xl font-display font-bold tracking-tighter uppercase">Volt <span class="accent-text">Unblocked</span></h1>
+          </div>
+
+          <div class="flex-1 max-w-xl relative">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 opacity-50 text-[var(--text)]"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            <input
+              type="text"
+              id="search-input"
+              placeholder="Search for a game..."
+              class="w-full bg-[var(--surface)] border border-[var(--border)] rounded-full py-2 pl-10 pr-4 outline-none focus:ring-2 focus:ring-[var(--accent)]/50 transition-all text-[var(--text)]"
+            />
+          </div>
+
+          <button 
+            id="settings-btn"
+            class="p-2 hover:bg-[var(--surface)] rounded-full transition-colors border border-transparent hover:border-[var(--border)]"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-settings w-5 h-5"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.72V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.17a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.1a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
+          </button>
+        </div>
+      </header>
+
+      <!-- Main Game Grid -->
+      <main id="game-grid-container" class="max-w-7xl mx-auto px-6 py-8">
+        <div id="game-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <!-- Games injected here -->
+        </div>
+        <div id="no-results" class="hidden text-center py-20 opacity-50">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search w-12 h-12 mx-auto mb-4"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          <p class="text-xl">No games found matching your search.</p>
+        </div>
+      </main>
+
+      <!-- Game Viewer Overlay -->
+      <div id="game-viewer" class="fixed inset-0 z-50 bg-[var(--bg)] hidden flex-col">
+        <div class="flex items-center justify-between p-4 border-b border-[var(--border)]">
+          <div class="flex items-center gap-4">
+            <button id="close-game" class="p-2 hover:bg-[var(--surface)] rounded-lg transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x w-6 h-6"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+            </button>
+            <h2 id="viewer-title" class="text-xl font-bold font-display">Game Title</h2>
+          </div>
+          <div class="flex items-center gap-2">
+            <button id="fullscreen-btn" class="p-2 hover:bg-[var(--surface)] rounded-lg transition-colors" title="Fullscreen">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-maximize w-5 h-5"><path d="M8 3H5a2 2 0 0 0-2 2v3"/><path d="M21 8V5a2 2 0 0 0-2-2h-3"/><path d="M3 16v3a2 2 0 0 0 2 2h3"/><path d="M16 21h3a2 2 0 0 0 2-2v-3"/></svg>
+            </button>
+            <a id="external-link" href="#" target="_blank" rel="noreferrer" class="p-2 hover:bg-[var(--surface)] rounded-lg transition-colors" title="Open in new tab">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link w-5 h-5"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="flex-1 bg-black overflow-hidden relative">
+          <iframe
+            id="game-iframe"
+            class="absolute inset-0 w-full h-full border-none"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
+            sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-scripts allow-same-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+
+      <!-- Settings Modal -->
+      <div id="settings-modal" class="fixed inset-0 z-[60] hidden">
+        <div id="modal-overlay" class="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+        <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-md p-6">
+          <div class="bg-[var(--bg)] border border-[var(--border)] rounded-3xl shadow-2xl p-8">
+            <div class="flex items-center justify-between mb-8">
+              <h2 class="text-2xl font-display font-bold">Settings</h2>
+              <button id="close-settings" class="p-2 hover:bg-[var(--surface)] rounded-full text-[var(--text)]">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x w-6 h-6"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+              </button>
+            </div>
+
+            <div class="space-y-8">
+              <!-- Theme Selector -->
+              <section>
+                <label class="block text-sm font-bold uppercase tracking-wider opacity-50 mb-4">Aesthetic Theme</label>
+                <div class="grid grid-cols-2 gap-3" id="theme-options">
+                  <button data-theme="light" class="theme-btn px-4 py-3 rounded-xl border-2 border-[var(--border)] bg-[var(--surface)] hover:border-[var(--accent)]/50 transition-all capitalize font-medium text-[var(--text)]">Light</button>
+                  <button data-theme="dark" class="theme-btn px-4 py-3 rounded-xl border-2 border-[var(--border)] bg-[var(--surface)] hover:border-[var(--accent)]/50 transition-all capitalize font-medium text-[var(--text)]">Dark</button>
+                  <button data-theme="retro" class="theme-btn px-4 py-3 rounded-xl border-2 border-[var(--border)] bg-[var(--surface)] hover:border-[var(--accent)]/50 transition-all capitalize font-medium text-[var(--text)]">Retro</button>
+                  <button data-theme="cyberpunk" class="theme-btn px-4 py-3 rounded-xl border-2 border-[var(--border)] bg-[var(--surface)] hover:border-[var(--accent)]/50 transition-all capitalize font-medium text-[var(--text)]">Cyberpunk</button>
+                </div>
+              </section>
+
+              <!-- Tab Cloak Toggle -->
+              <section class="flex items-center justify-between">
+                <div>
+                  <h3 class="font-bold flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-check w-5 h-5 accent-text"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+                    Tab Cloak
+                  </h3>
+                  <p class="text-xs opacity-60">Disguise this tab as Google Docs</p>
+                </div>
+                <button
+                  id="cloak-toggle"
+                  class="w-14 h-8 rounded-full relative bg-gray-400 transition-colors duration-300"
+                >
+                  <div class="dot absolute top-1 left-1 w-6 h-6 bg-white rounded-full shadow-md transition-transform duration-300"></div>
+                </button>
+              </section>
+            </div>
+
+            <button 
+              id="save-settings"
+              class="w-full mt-10 p-4 accent-bg text-white rounded-2xl font-bold hover:brightness-110 transition-all shadow-lg active:scale-95"
+            >
+              Save & Close
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <footer id="main-footer" class="max-w-7xl mx-auto px-6 py-12 border-t border-[var(--border)] opacity-50 text-sm flex flex-col sm:flex-row justify-between items-center gap-4">
+        <p>&copy; 2026 Volt Unblocked. All games are property of their respective owners.</p>
+        <div class="flex gap-6">
+          <button class="hover:accent-text transition-colors">Privacy Policy</button>
+          <button class="hover:accent-text transition-colors">Terms of Service</button>
+        </div>
+      </footer>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
 
