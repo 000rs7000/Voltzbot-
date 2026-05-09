@@ -138,16 +138,6 @@ body {
   min-height: 100vh;
 }
 
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  background-color: var(--bg);
-  opacity: 0.85; /* Allows space background to show through slightly */
-  transition: background-color 0.3s ease;
-}
-
 .card {
   background-color: var(--surface);
   border: 1px solid var(--border);

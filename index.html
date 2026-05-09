@@ -6,8 +6,9 @@
     <title>AlphaOS</title>
   </head>
   <body>
-    <canvas id="stars-canvas" class="fixed inset-0 z-[-2] pointer-events-none w-full h-full opacity-100"></canvas>
+    <div class="fixed inset-0 z-[-4] bg-[var(--bg)] transition-colors duration-300"></div>
     <div id="custom-bg" class="fixed inset-0 z-[-3] bg-cover bg-center bg-no-repeat transition-opacity duration-500 opacity-0"></div>
+    <canvas id="stars-canvas" class="fixed inset-0 z-[-2] pointer-events-none w-full h-full opacity-100"></canvas>
     <div id="loading-screen" class="fixed inset-0 z-[100] bg-[var(--bg)] flex flex-col items-center justify-center font-display transition-opacity duration-500">
       <div class="w-16 h-16 border-4 border-[var(--border)] border-t-[var(--accent)] rounded-full animate-spin mb-6"></div>
       <h1 class="text-5xl font-bold tracking-tighter uppercase mb-2">Alpha<span class="accent-text">OS</span></h1>

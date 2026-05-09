@@ -115,6 +115,10 @@ function initBackgroundStars() {
 
     const cx = width / 2;
     const cy = height / 2;
+    
+    // Use theme text color for stars so they are visible on light themes
+    const textColor = getComputedStyle(document.body).getPropertyValue('--text').trim() || '#ffffff';
+    ctx!.fillStyle = textColor;
 
     for (let i = 0; i < numStars; i++) {
       const star = stars[i];
@@ -135,12 +139,13 @@ function initBackgroundStars() {
       if (x >= 0 && x <= width && y >= 0 && y <= height) {
         ctx!.beginPath();
         const intensity = Math.min(1, 1.5 - (star.z / width));
-        ctx!.fillStyle = `rgba(255, 255, 255, ${intensity})`;
+        ctx!.globalAlpha = intensity;
         ctx!.arc(x, y, radius, 0, Math.PI * 2);
         ctx!.fill();
       }
     }
-
+    
+    ctx!.globalAlpha = 1.0; // reset
     requestAnimationFrame(render);
   }
 
