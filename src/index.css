@@ -40,6 +40,86 @@
   --border: #333333;
 }
 
+[data-theme='sakura'] {
+  --bg: #fff0f5;
+  --text: #800020;
+  --accent: #ffb7c5;
+  --surface: #ffe4e1;
+  --border: #ffc0cb;
+}
+
+[data-theme='ocean'] {
+  --bg: #001f3f;
+  --text: #7fdbff;
+  --accent: #0074d9;
+  --surface: #002b5e;
+  --border: #004d99;
+}
+
+[data-theme='forest'] {
+  --bg: #1e392a;
+  --text: #e9ebd8;
+  --accent: #4ade80;
+  --surface: #2b4f3b;
+  --border: #3d6a50;
+}
+
+[data-theme='sunset'] {
+  --bg: #2d1b2e;
+  --text: #ffd3b6;
+  --accent: #ff8c42;
+  --surface: #40273a;
+  --border: #56334a;
+}
+
+[data-theme='midnight'] {
+  --bg: #0f172a;
+  --text: #e2e8f0;
+  --accent: #818cf8;
+  --surface: #1e293b;
+  --border: #334155;
+}
+
+[data-theme='neon'] {
+  --bg: #000000;
+  --text: #00ffff;
+  --accent: #ff0055;
+  --surface: #111111;
+  --border: #222222;
+}
+
+[data-theme='halloween'] {
+  --bg: #1a0f14;
+  --text: #ff9900;
+  --accent: #9900ff;
+  --surface: #2d1a24;
+  --border: #4d2b3d;
+}
+
+[data-theme='winter'] {
+  --bg: #f0f8ff;
+  --text: #2f4f4f;
+  --accent: #00ced1;
+  --surface: #e0ffff;
+  --border: #b0e0e6;
+}
+
+[data-theme='dessert'] {
+  --bg: #fff5e1;
+  --text: #6b4c3a;
+  --accent: #ff69b4;
+  --surface: #ffecd2;
+  --border: #ffdab9;
+}
+
+[data-theme='obsidian'] {
+  --bg: #0b0c10;
+  --text: #c5c6c7;
+  --accent: #66fcf1;
+  --surface: #1f2833;
+  --border: #45a29e;
+}
+
 [data-theme='cyberpunk'] .card {
   box-shadow: 0 0 10px rgba(57, 255, 20, 0.1);
 }
@@ -53,10 +133,19 @@
 }
 
 body {
-  background-color: var(--bg);
+  background-color: transparent;
   color: var(--text);
-  transition: background-color 0.3s ease, color 0.3s ease;
   min-height: 100vh;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-color: var(--bg);
+  opacity: 0.85; /* Allows space background to show through slightly */
+  transition: background-color 0.3s ease;
 }
 
 .card {

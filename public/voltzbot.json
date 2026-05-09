@@ -1,184 +1,639 @@
 [
   {
     "id": "1",
-    "title": "Papa's Hot Doggeria",
-    "description": "Serve the fans at the stadium!",
-    "url": "https://mathv2.b-cdn.net/study/papashotdoggeria/index.html",
-    "image": "https://images.crazygames.com/papas-hot-doggeria/20200830113110/papas-hot-doggeria-cover?auto=format,compress&q=75&cs=strip&ch=DPR&w=1200&h=630&fit=crop"
+    "title": "Heartbreak Havoc",
+    "description": "Play Heartbreak Havoc on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study2/691.html",
+    "image": "https://ui-avatars.com/api/?name=Heartbreak%20Havoc&background=random&color=fff&size=256"
   },
   {
     "id": "2",
-    "title": "Happy Wheels",
-    "description": "Try to reach the end alive.",
-    "url": "https://mathv2.b-cdn.net/study/happywheels/index.html",
-    "image": "https://images.crazygames.com/happy-wheels/20210729114728/happy-wheels-cover?auto=format,compress&q=75&cs=strip&ch=DPR&w=1200&h=630&fit=crop"
+    "title": "Friday Night Funkin' + Hatsune Miku",
+    "description": "Play Friday Night Funkin' + Hatsune Miku on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study2/477.html",
+    "image": "https://ui-avatars.com/api/?name=Friday%20Night%20Funkin'%20%2B%20Hatsune%20Miku&background=random&color=fff&size=256"
   },
   {
     "id": "3",
-    "title": "Tetris",
-    "description": "The world's favorite puzzle game.",
-    "url": "https://mathv2.b-cdn.net/study/tetris/index.html",
-    "image": "https://images.crazygames.com/tetris/20200830113110/tetris-cover?auto=format,compress&q=75&cs=strip&ch=DPR&w=1200&h=630&fit=crop"
+    "title": "Friday Night Funkin' (Alternative)",
+    "description": "Play Friday Night Funkin' (Alternative) on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study2/476.html",
+    "image": "https://ui-avatars.com/api/?name=Friday%20Night%20Funkin'%20(Alternative)&background=random&color=fff&size=256"
   },
   {
     "id": "4",
-    "title": "Retro Bowl",
-    "description": "Manage your own football team.",
-    "url": "https://mathv2.b-cdn.net/study/retrobowl/index.html",
-    "image": "https://images.crazygames.com/retro-bowl/20220301111624/retro-bowl-cover?auto=format,compress&q=75&cs=strip&ch=DPR&w=1200&h=630&fit=crop"
+    "title": "Friday Night Funkin'",
+    "description": "Play Friday Night Funkin' on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study2/474.html",
+    "image": "https://ui-avatars.com/api/?name=Friday%20Night%20Funkin'&background=random&color=fff&size=256"
   },
   {
     "id": "5",
-    "title": "Dino Game",
-    "description": "The hidden offline chrome game.",
-    "url": "https://mathv2.b-cdn.net/study/dinogame/index.html",
-    "image": "https://images.crazygames.com/dino-chrome/20200830113110/dino-chrome-cover?auto=format,compress&q=75&cs=strip&ch=DPR&w=1200&h=630&fit=crop"
+    "title": "A Dance of Fire and Ice",
+    "description": "Play A Dance of Fire and Ice on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/adofai/index.html",
+    "image": "https://ui-avatars.com/api/?name=A%20Dance%20of%20Fire%20and%20Ice&background=random&color=fff&size=256"
   },
   {
     "id": "6",
-    "title": "Duck Life 4",
-    "description": "Total duck training evolution.",
-    "url": "https://mathv2.b-cdn.net/study/ducklife4/index.html",
-    "image": "https://images.crazygames.com/games/duck-life-4/cover-1582283030386.png?auto=format,compress&q=75&cs=strip&ch=DPR&w=1200&h=630&fit=crop"
+    "title": "This Is The Only Level",
+    "description": "Play This Is The Only Level on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/thisistheonlylevel/index.html",
+    "image": "https://ui-avatars.com/api/?name=This%20Is%20The%20Only%20Level&background=random&color=fff&size=256"
   },
   {
     "id": "7",
-    "title": "Temple Run 2",
-    "description": "Keep running to escape the idol's curse.",
-    "url": "https://mathv2.b-cdn.net/study/templerun2/index.html",
-    "image": "https://images.crazygames.com/temple-run-2/20200830113110/temple-run-2-cover?auto=format,compress&q=75&cs=strip&ch=DPR&w=1200&h=630&fit=crop"
+    "title": "Mario & Luigi Superstar Saga",
+    "description": "Play Mario & Luigi Superstar Saga on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/superstarsaga/index.html",
+    "image": "https://ui-avatars.com/api/?name=Mario%20%26%20Luigi%20Superstar%20Saga&background=random&color=fff&size=256"
   },
   {
     "id": "8",
-    "title": "Minecraft",
-    "description": "Mine, build, and explore.",
-    "url": "https://mathv2.b-cdn.net/study/mc/index.html",
-    "image": "https://images.crazygames.com/minecraft-classic/20210211112441/minecraft-classic-cover?auto=format,compress&q=75&cs=strip&ch=DPR&w=1200&h=630&fit=crop"
+    "title": "Pokemon Sapphire",
+    "description": "Play Pokemon Sapphire on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/pokemonsapphire/index.html",
+    "image": "https://ui-avatars.com/api/?name=Pokemon%20Sapphire&background=random&color=fff&size=256"
   },
   {
     "id": "9",
-    "title": "BitLife",
-    "description": "Live your life simulation.",
-    "url": "https://mathv2.b-cdn.net/study/bitlife/index.html",
-    "image": "https://images.crazygames.com/games/bitlife-life-simulator/cover-1582283030386.png?auto=format,compress&q=75&cs=strip&ch=DPR&w=1200&h=630&fit=crop"
+    "title": "Pokemon Ruby",
+    "description": "Play Pokemon Ruby on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/pokemonruby/index.html",
+    "image": "https://ui-avatars.com/api/?name=Pokemon%20Ruby&background=random&color=fff&size=256"
   },
   {
     "id": "10",
-    "title": "Run 3",
-    "description": "Run through space and dodge obstacles.",
-    "url": "https://mathv2.b-cdn.net/study/run3/index.html",
-    "image": "https://images.crazygames.com/run-3/20200830113110/run-3-cover?auto=format,compress&q=75&cs=strip&ch=DPR&w=1200&h=630&fit=crop"
+    "title": "Pokemon LeafGreen",
+    "description": "Play Pokemon LeafGreen on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/pokemonleafgreen/index.html",
+    "image": "https://ui-avatars.com/api/?name=Pokemon%20LeafGreen&background=random&color=fff&size=256"
   },
   {
     "id": "11",
-    "title": "Omori",
-    "description": "Explore the strange world of Omori.",
-    "url": "https://mathv2.b-cdn.net/study/omori/index.html",
-    "image": "https://images.crazygames.com/omori/20200830113110/omori-cover?auto=format,compress&q=75&cs=strip&ch=DPR&w=1200&h=630&fit=crop"
+    "title": "Mario Kart Super Circuit",
+    "description": "Play Mario Kart Super Circuit on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/mariokartsupercircuit/index.html",
+    "image": "https://ui-avatars.com/api/?name=Mario%20Kart%20Super%20Circuit&background=random&color=fff&size=256"
   },
   {
     "id": "12",
-    "title": "Slope",
-    "description": "Roll down the slope as far as you can.",
-    "url": "https://mathv2.b-cdn.net/study/slope/index.html",
-    "image": "https://images.crazygames.com/slope/20200830113110/slope-cover?auto=format,compress&q=75&cs=strip&ch=DPR&w=1200&h=630&fit=crop"
+    "title": "Ice Climber",
+    "description": "Play Ice Climber on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/iceclimber/index.html",
+    "image": "https://ui-avatars.com/api/?name=Ice%20Climber&background=random&color=fff&size=256"
   },
   {
     "id": "13",
-    "title": "Five Nights at Freddy's 4 Halloween",
-    "description": "The Halloween edition.",
-    "url": "https://mathv2.b-cdn.net/study2/428.html",
-    "image": "https://images.crazygames.com/five-nights-at-freddys-4/20200830113110/five-nights-at-freddys-4-cover?auto=format,compress&q=75&cs=strip&ch=DPR&w=1200&h=630&fit=crop"
+    "title": "Bomberman",
+    "description": "Play Bomberman on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/bomberman/index.html",
+    "image": "https://ui-avatars.com/api/?name=Bomberman&background=random&color=fff&size=256"
   },
   {
     "id": "14",
-    "title": "Five Nights at Candy's 2",
-    "description": "The sequel to the fan game.",
-    "url": "https://mathv2.b-cdn.net/study2/504.html",
-    "image": "https://images.crazygames.com/five-nights-at-freddys/20200830113110/five-nights-at-freddys-cover?auto=format,compress&q=75&cs=strip&ch=DPR&w=1200&h=630&fit=crop"
+    "title": "Fire Emblem",
+    "description": "Play Fire Emblem on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/fireemblem/index.html",
+    "image": "https://ui-avatars.com/api/?name=Fire%20Emblem&background=random&color=fff&size=256"
   },
   {
     "id": "15",
-    "title": "Five Nights at Candy's",
-    "description": "The original fan game.",
-    "url": "https://mathv2.b-cdn.net/study2/503.html",
-    "image": "https://images.crazygames.com/five-nights-at-freddys-2/20200830113110/five-nights-at-freddys-2-cover?auto=format,compress&q=75&cs=strip&ch=DPR&w=1200&h=630&fit=crop"
+    "title": "Bloons TD 4",
+    "description": "Play Bloons TD 4 on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/btd/btd4/index.html",
+    "image": "https://ui-avatars.com/api/?name=Bloons%20TD%204&background=random&color=fff&size=256"
   },
   {
     "id": "16",
-    "title": "Five Nights at Winston's",
-    "description": "My fnaf fan game where you play as the janitor at my school while these erasers with creepy faces and paperclip limbs hunt you down",
-    "url": "https://mathv2.b-cdn.net/study2/204-a.html",
-    "image": "https://images.crazygames.com/five-nights-at-freddys-3/20200830113110/five-nights-at-freddys-3-cover?auto=format,compress&q=75&cs=strip&ch=DPR&w=1200&h=630&fit=crop"
+    "title": "Bloons TD 3",
+    "description": "Play Bloons TD 3 on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/btd/btd3/index.html",
+    "image": "https://ui-avatars.com/api/?name=Bloons%20TD%203&background=random&color=fff&size=256"
   },
   {
     "id": "17",
-    "title": "Five Nights at Freddy's UCN",
-    "description": "Ultimate Custom Night.",
-    "url": "https://mathv2.b-cdn.net/study2/192.html",
-    "image": "https://images.crazygames.com/five-nights-at-freddys/20200830113110/five-nights-at-freddys-cover?auto=format,compress&q=75&cs=strip&ch=DPR&w=1200&h=630&fit=crop"
+    "title": "Bloons TD",
+    "description": "Play Bloons TD on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/btd/btd/index.html",
+    "image": "https://ui-avatars.com/api/?name=Bloons%20TD&background=random&color=fff&size=256"
   },
   {
     "id": "18",
-    "title": "Five Nights at Freddy's Pizzeria Simulator",
-    "description": "Manage your own Freddy Fazbear's Pizzeria.",
-    "url": "https://mathv2.b-cdn.net/study2/191.html",
-    "image": "https://images.crazygames.com/five-nights-at-freddys-2/20200830113110/five-nights-at-freddys-2-cover?auto=format,compress&q=75&cs=strip&ch=DPR&w=1200&h=630&fit=crop"
+    "title": "Bloons TD 2",
+    "description": "Play Bloons TD 2 on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/btd/btd2/index.html",
+    "image": "https://ui-avatars.com/api/?name=Bloons%20TD%202&background=random&color=fff&size=256"
   },
   {
     "id": "19",
-    "title": "Five Nights at Freddy's Sister Location",
-    "description": "Welcome to Circus Baby's Pizza World.",
-    "url": "https://mathv2.b-cdn.net/study2/185.html",
-    "image": "https://images.crazygames.com/five-nights-at-freddys-3/20200830113110/five-nights-at-freddys-3-cover?auto=format,compress&q=75&cs=strip&ch=DPR&w=1200&h=630&fit=crop"
+    "title": "Color Switch",
+    "description": "Play Color Switch on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/colorswitch/index.html",
+    "image": "https://ui-avatars.com/api/?name=Color%20Switch&background=random&color=fff&size=256"
   },
   {
     "id": "20",
-    "title": "Five Nights at Freddy's World",
-    "description": "The RPG spin-off.",
-    "url": "https://mathv2.b-cdn.net/study2/190.html",
-    "image": "https://images.crazygames.com/five-nights-at-freddys-4/20200830113110/five-nights-at-freddys-4-cover?auto=format,compress&q=75&cs=strip&ch=DPR&w=1200&h=630&fit=crop"
+    "title": "Papa's Freezeria",
+    "description": "Play Papa's Freezeria on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/papasfreezeria/index.html",
+    "image": "https://ui-avatars.com/api/?name=Papa's%20Freezeria&background=random&color=fff&size=256"
   },
   {
     "id": "21",
-    "title": "Five Nights at Freddy's 4",
-    "description": "What have you brought home?",
-    "url": "https://mathv2.b-cdn.net/study2/41.html",
-    "image": "https://images.crazygames.com/five-nights-at-freddys-4/20200830113110/five-nights-at-freddys-4-cover?auto=format,compress&q=75&cs=strip&ch=DPR&w=1200&h=630&fit=crop"
+    "title": "Super Mario Land",
+    "description": "Play Super Mario Land on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/supermarioland/index.html",
+    "image": "https://ui-avatars.com/api/?name=Super%20Mario%20Land&background=random&color=fff&size=256"
   },
   {
     "id": "22",
-    "title": "Five Nights at Freddy's 3",
-    "description": "Thirty years after Freddy Fazbear's Pizza closed its doors.",
-    "url": "https://mathv2.b-cdn.net/study2/40.html",
-    "image": "https://images.crazygames.com/five-nights-at-freddys-3/20200830113110/five-nights-at-freddys-3-cover?auto=format,compress&q=75&cs=strip&ch=DPR&w=1200&h=630&fit=crop"
+    "title": "Doge Miner",
+    "description": "Play Doge Miner on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/dogeminer/index.html",
+    "image": "https://ui-avatars.com/api/?name=Doge%20Miner&background=random&color=fff&size=256"
   },
   {
     "id": "23",
-    "title": "Five Nights at Freddy's 2",
-    "description": "Welcome back to Freddy Fazbear's Pizza.",
-    "url": "https://mathv2.b-cdn.net/study2/38.html",
-    "image": "https://images.crazygames.com/five-nights-at-freddys-2/20200830113110/five-nights-at-freddys-2-cover?auto=format,compress&q=75&cs=strip&ch=DPR&w=1200&h=630&fit=crop"
+    "title": "Donkey Kong Land",
+    "description": "Play Donkey Kong Land on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/donkeykongland/index.html",
+    "image": "https://ui-avatars.com/api/?name=Donkey%20Kong%20Land&background=random&color=fff&size=256"
   },
   {
     "id": "24",
-    "title": "Five Nights at Freddy's 3",
-    "description": "Thirty years after...",
-    "url": "https://mathv2.b-cdn.net/study2/39.html",
-    "image": "https://images.crazygames.com/five-nights-at-freddys-3/20200830113110/five-nights-at-freddys-3-cover?auto=format,compress&q=75&cs=strip&ch=DPR&w=1200&h=630&fit=crop"
+    "title": "Kirby's Dreamland",
+    "description": "Play Kirby's Dreamland on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/kirbysdreamland/index.html",
+    "image": "https://ui-avatars.com/api/?name=Kirby's%20Dreamland&background=random&color=fff&size=256"
   },
   {
     "id": "25",
-    "title": "Friday Night Funkin'",
-    "description": "A rhythm battle for the ages.",
-    "url": "https://mathv2.b-cdn.net/study2/8-wow.html",
-    "image": "https://images.crazygames.com/friday-night-funkin/20210323114528/friday-night-funkin-cover?auto=format,compress&q=75&cs=strip&ch=DPR&w=1200&h=630&fit=crop"
+    "title": "WarioWare",
+    "description": "Play WarioWare on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/warioware/index.html",
+    "image": "https://ui-avatars.com/api/?name=WarioWare&background=random&color=fff&size=256"
   },
   {
     "id": "26",
-    "title": "Block Blast Puzzle",
-    "description": "Block blast puzzle game.",
-    "url": "https://mathv2.b-cdn.net/study2/6.html",
-    "image": "https://images.crazygames.com/block-blast-puzzle/20200830113110/block-blast-puzzle-cover?auto=format,compress&q=75&cs=strip&ch=DPR&w=1200&h=630&fit=crop"
+    "title": "Yoshi's Island",
+    "description": "Play Yoshi's Island on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/yoshisisland/index.html",
+    "image": "https://ui-avatars.com/api/?name=Yoshi's%20Island&background=random&color=fff&size=256"
+  },
+  {
+    "id": "27",
+    "title": "Super Mario Bros 3",
+    "description": "Play Super Mario Bros 3 on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/supermariobros3/index.html",
+    "image": "https://ui-avatars.com/api/?name=Super%20Mario%20Bros%203&background=random&color=fff&size=256"
+  },
+  {
+    "id": "28",
+    "title": "The Legend of Zelda",
+    "description": "Play The Legend of Zelda on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/thelegendofzelda/index.html",
+    "image": "https://ui-avatars.com/api/?name=The%20Legend%20of%20Zelda&background=random&color=fff&size=256"
+  },
+  {
+    "id": "29",
+    "title": "Metroid",
+    "description": "Play Metroid on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/metroid/index.html",
+    "image": "https://ui-avatars.com/api/?name=Metroid&background=random&color=fff&size=256"
+  },
+  {
+    "id": "30",
+    "title": "Super Mario Bros 2",
+    "description": "Play Super Mario Bros 2 on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/supermariobros2/index.html",
+    "image": "https://ui-avatars.com/api/?name=Super%20Mario%20Bros%202&background=random&color=fff&size=256"
+  },
+  {
+    "id": "31",
+    "title": "Donkey Kong",
+    "description": "Play Donkey Kong on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/donkeykong/index.html",
+    "image": "https://ui-avatars.com/api/?name=Donkey%20Kong&background=random&color=fff&size=256"
+  },
+  {
+    "id": "32",
+    "title": "Dr. Mario",
+    "description": "Play Dr. Mario on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/drmario/index.html",
+    "image": "https://ui-avatars.com/api/?name=Dr.%20Mario&background=random&color=fff&size=256"
+  },
+  {
+    "id": "33",
+    "title": "World's Hardest Game",
+    "description": "Play World's Hardest Game on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/worldshardestgame/index.html",
+    "image": "https://ui-avatars.com/api/?name=World's%20Hardest%20Game&background=random&color=fff&size=256"
+  },
+  {
+    "id": "34",
+    "title": "Castlevania",
+    "description": "Play Castlevania on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/castlevania/index.html",
+    "image": "https://ui-avatars.com/api/?name=Castlevania&background=random&color=fff&size=256"
+  },
+  {
+    "id": "35",
+    "title": "Super Mario World",
+    "description": "Play Super Mario World on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/supermarioworld/index.html",
+    "image": "https://ui-avatars.com/api/?name=Super%20Mario%20World&background=random&color=fff&size=256"
+  },
+  {
+    "id": "36",
+    "title": "There Is No Game",
+    "description": "Play There Is No Game on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/thereisnogame/index.html",
+    "image": "https://ui-avatars.com/api/?name=There%20Is%20No%20Game&background=random&color=fff&size=256"
+  },
+  {
+    "id": "37",
+    "title": "Super Mario Bros",
+    "description": "Play Super Mario Bros on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/supermariobros/index.html",
+    "image": "https://ui-avatars.com/api/?name=Super%20Mario%20Bros&background=random&color=fff&size=256"
+  },
+  {
+    "id": "38",
+    "title": "Pokemon FireRed",
+    "description": "Play Pokemon FireRed on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/pokemonfirered/index.html",
+    "image": "https://ui-avatars.com/api/?name=Pokemon%20FireRed&background=random&color=fff&size=256"
+  },
+  {
+    "id": "39",
+    "title": "Pokemon Emerald",
+    "description": "Play Pokemon Emerald on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/pokemonemerald/index.html",
+    "image": "https://ui-avatars.com/api/?name=Pokemon%20Emerald&background=random&color=fff&size=256"
+  },
+  {
+    "id": "40",
+    "title": "Minesweeper",
+    "description": "Play Minesweeper on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/minesweeper/index.html",
+    "image": "https://ui-avatars.com/api/?name=Minesweeper&background=random&color=fff&size=256"
+  },
+  {
+    "id": "41",
+    "title": "Bob The Robber 2",
+    "description": "Play Bob The Robber 2 on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/bobtherobber2/index.html",
+    "image": "https://ui-avatars.com/api/?name=Bob%20The%20Robber%202&background=random&color=fff&size=256"
+  },
+  {
+    "id": "42",
+    "title": "Papa's Pancakeria",
+    "description": "Play Papa's Pancakeria on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/papaspancakeria/index.html",
+    "image": "https://ui-avatars.com/api/?name=Papa's%20Pancakeria&background=random&color=fff&size=256"
+  },
+  {
+    "id": "43",
+    "title": "Pac-Man",
+    "description": "Play Pac-Man on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/pacman/index.html",
+    "image": "https://ui-avatars.com/api/?name=Pac-Man&background=random&color=fff&size=256"
+  },
+  {
+    "id": "44",
+    "title": "Friday Night Funkin'",
+    "description": "Play Friday Night Funkin' on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/fnf/index.html",
+    "image": "https://ui-avatars.com/api/?name=Friday%20Night%20Funkin'&background=random&color=fff&size=256"
+  },
+  {
+    "id": "45",
+    "title": "Drift Boss",
+    "description": "Play Drift Boss on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/driftboss/index.html",
+    "image": "https://ui-avatars.com/api/?name=Drift%20Boss&background=random&color=fff&size=256"
+  },
+  {
+    "id": "46",
+    "title": "Riddle Transfer 2",
+    "description": "Play Riddle Transfer 2 on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/riddleschool/riddletransfer2/index.html",
+    "image": "https://ui-avatars.com/api/?name=Riddle%20Transfer%202&background=random&color=fff&size=256"
+  },
+  {
+    "id": "47",
+    "title": "Riddle Transfer",
+    "description": "Play Riddle Transfer on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/riddleschool/riddletransfer/index.html",
+    "image": "https://ui-avatars.com/api/?name=Riddle%20Transfer&background=random&color=fff&size=256"
+  },
+  {
+    "id": "48",
+    "title": "Riddle School 5",
+    "description": "Play Riddle School 5 on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/riddleschool/riddleschool5/index.html",
+    "image": "https://ui-avatars.com/api/?name=Riddle%20School%205&background=random&color=fff&size=256"
+  },
+  {
+    "id": "49",
+    "title": "Riddle School 4",
+    "description": "Play Riddle School 4 on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/riddleschool/riddleschool4/index.html",
+    "image": "https://ui-avatars.com/api/?name=Riddle%20School%204&background=random&color=fff&size=256"
+  },
+  {
+    "id": "50",
+    "title": "Riddle School 3",
+    "description": "Play Riddle School 3 on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/riddleschool/riddleschool3/index.html",
+    "image": "https://ui-avatars.com/api/?name=Riddle%20School%203&background=random&color=fff&size=256"
+  },
+  {
+    "id": "51",
+    "title": "Riddle School 2",
+    "description": "Play Riddle School 2 on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/riddleschool/riddleschool2/index.html",
+    "image": "https://ui-avatars.com/api/?name=Riddle%20School%202&background=random&color=fff&size=256"
+  },
+  {
+    "id": "52",
+    "title": "Riddle School 1",
+    "description": "Play Riddle School 1 on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/riddleschool/riddleschool1/index.html",
+    "image": "https://ui-avatars.com/api/?name=Riddle%20School%201&background=random&color=fff&size=256"
+  },
+  {
+    "id": "53",
+    "title": "Five Nights at Freddy's 4",
+    "description": "Play Five Nights at Freddy's 4 on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/fnaf-4/index.html",
+    "image": "https://ui-avatars.com/api/?name=Five%20Nights%20at%20Freddy's%204&background=random&color=fff&size=256"
+  },
+  {
+    "id": "54",
+    "title": "Five Nights at Freddy's 3",
+    "description": "Play Five Nights at Freddy's 3 on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/fnaf-3/index.html",
+    "image": "https://ui-avatars.com/api/?name=Five%20Nights%20at%20Freddy's%203&background=random&color=fff&size=256"
+  },
+  {
+    "id": "55",
+    "title": "Five Nights at Freddy's 2",
+    "description": "Play Five Nights at Freddy's 2 on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/fnaf-2/index.html",
+    "image": "https://ui-avatars.com/api/?name=Five%20Nights%20at%20Freddy's%202&background=random&color=fff&size=256"
+  },
+  {
+    "id": "56",
+    "title": "Five Nights at Freddy's",
+    "description": "Play Five Nights at Freddy's on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/fnaf/index.html",
+    "image": "https://ui-avatars.com/api/?name=Five%20Nights%20at%20Freddy's&background=random&color=fff&size=256"
+  },
+  {
+    "id": "57",
+    "title": "Roblox",
+    "description": "Play Roblox on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/roblox.html",
+    "image": "https://ui-avatars.com/api/?name=Roblox&background=random&color=fff&size=256"
+  },
+  {
+    "id": "58",
+    "title": "Moto X3M",
+    "description": "Play Moto X3M on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/motox3m/index.html",
+    "image": "https://ui-avatars.com/api/?name=Moto%20X3M&background=random&color=fff&size=256"
+  },
+  {
+    "id": "59",
+    "title": "Surf",
+    "description": "Play Surf on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/surf/index.html",
+    "image": "https://ui-avatars.com/api/?name=Surf&background=random&color=fff&size=256"
+  },
+  {
+    "id": "60",
+    "title": "Vex 6",
+    "description": "Play Vex 6 on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/vex6/index.html",
+    "image": "https://ui-avatars.com/api/?name=Vex%206&background=random&color=fff&size=256"
+  },
+  {
+    "id": "61",
+    "title": "We Become What We Behold",
+    "description": "Play We Become What We Behold on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/webecomewhatwebehold/index.html",
+    "image": "https://ui-avatars.com/api/?name=We%20Become%20What%20We%20Behold&background=random&color=fff&size=256"
+  },
+  {
+    "id": "62",
+    "title": "The Impossible Quiz",
+    "description": "Play The Impossible Quiz on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/theimpossiblequiz/index.html",
+    "image": "https://ui-avatars.com/api/?name=The%20Impossible%20Quiz&background=random&color=fff&size=256"
+  },
+  {
+    "id": "63",
+    "title": "Solitaire",
+    "description": "Play Solitaire on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/solitaire/index.html",
+    "image": "https://ui-avatars.com/api/?name=Solitaire&background=random&color=fff&size=256"
+  },
+  {
+    "id": "64",
+    "title": "Escaping the Prison",
+    "description": "Play Escaping the Prison on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/escapingtheprison/index.html",
+    "image": "https://ui-avatars.com/api/?name=Escaping%20the%20Prison&background=random&color=fff&size=256"
+  },
+  {
+    "id": "65",
+    "title": "Stealing the Diamond",
+    "description": "Play Stealing the Diamond on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/stealingthediamond/index.html",
+    "image": "https://ui-avatars.com/api/?name=Stealing%20the%20Diamond&background=random&color=fff&size=256"
+  },
+  {
+    "id": "66",
+    "title": "Tunnel Rush",
+    "description": "Play Tunnel Rush on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/tunnelrush/index.html",
+    "image": "https://ui-avatars.com/api/?name=Tunnel%20Rush&background=random&color=fff&size=256"
+  },
+  {
+    "id": "67",
+    "title": "Theme Hotel",
+    "description": "Play Theme Hotel on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/themehotel/index.html",
+    "image": "https://ui-avatars.com/api/?name=Theme%20Hotel&background=random&color=fff&size=256"
+  },
+  {
+    "id": "68",
+    "title": "Happy Wheels",
+    "description": "Play Happy Wheels on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/happywheels/index.html",
+    "image": "https://ui-avatars.com/api/?name=Happy%20Wheels&background=random&color=fff&size=256"
+  },
+  {
+    "id": "69",
+    "title": "Papa's Hot Doggeria",
+    "description": "Play Papa's Hot Doggeria on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/papashotdoggeria/index.html",
+    "image": "https://ui-avatars.com/api/?name=Papa's%20Hot%20Doggeria&background=random&color=fff&size=256"
+  },
+  {
+    "id": "70",
+    "title": "Tetris",
+    "description": "Play Tetris on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/tetris/index.html",
+    "image": "https://ui-avatars.com/api/?name=Tetris&background=random&color=fff&size=256"
+  },
+  {
+    "id": "71",
+    "title": "Fancy Pants Adventure",
+    "description": "Play Fancy Pants Adventure on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/fancypantsadventure/index.html",
+    "image": "https://ui-avatars.com/api/?name=Fancy%20Pants%20Adventure&background=random&color=fff&size=256"
+  },
+  {
+    "id": "72",
+    "title": "2048",
+    "description": "Play 2048 on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/2048/index.html",
+    "image": "https://ui-avatars.com/api/?name=2048&background=random&color=fff&size=256"
+  },
+  {
+    "id": "73",
+    "title": "Jetpack Joyride",
+    "description": "Play Jetpack Joyride on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/jetpackjoyride/index.html",
+    "image": "https://ui-avatars.com/api/?name=Jetpack%20Joyride&background=random&color=fff&size=256"
+  },
+  {
+    "id": "74",
+    "title": "Dino Game",
+    "description": "Play Dino Game on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/dinogame/index.html",
+    "image": "https://ui-avatars.com/api/?name=Dino%20Game&background=random&color=fff&size=256"
+  },
+  {
+    "id": "75",
+    "title": "Duck Life 4",
+    "description": "Play Duck Life 4 on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/ducklife4/index.html",
+    "image": "https://ui-avatars.com/api/?name=Duck%20Life%204&background=random&color=fff&size=256"
+  },
+  {
+    "id": "76",
+    "title": "Temple Run 2",
+    "description": "Play Temple Run 2 on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/templerun2/index.html",
+    "image": "https://ui-avatars.com/api/?name=Temple%20Run%202&background=random&color=fff&size=256"
+  },
+  {
+    "id": "77",
+    "title": "Cookie Clicker",
+    "description": "Play Cookie Clicker on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/cookieclicker/index.html",
+    "image": "https://ui-avatars.com/api/?name=Cookie%20Clicker&background=random&color=fff&size=256"
+  },
+  {
+    "id": "78",
+    "title": "Minecraft",
+    "description": "Play Minecraft on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/mc/index.html",
+    "image": "https://ui-avatars.com/api/?name=Minecraft&background=random&color=fff&size=256"
+  },
+  {
+    "id": "79",
+    "title": "Crossy Road",
+    "description": "Play Crossy Road on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/crossy/index.html",
+    "image": "https://ui-avatars.com/api/?name=Crossy%20Road&background=random&color=fff&size=256"
+  },
+  {
+    "id": "80",
+    "title": "BitLife",
+    "description": "Play BitLife on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/bitlife/index.html",
+    "image": "https://ui-avatars.com/api/?name=BitLife&background=random&color=fff&size=256"
+  },
+  {
+    "id": "81",
+    "title": "Zrist",
+    "description": "Play Zrist on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/zrist/index.html",
+    "image": "https://ui-avatars.com/api/?name=Zrist&background=random&color=fff&size=256"
+  },
+  {
+    "id": "82",
+    "title": "Run 3",
+    "description": "Play Run 3 on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/run3/index.html",
+    "image": "https://ui-avatars.com/api/?name=Run%203&background=random&color=fff&size=256"
+  },
+  {
+    "id": "83",
+    "title": "Repo",
+    "description": "Play Repo on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/repo/index.html",
+    "image": "https://ui-avatars.com/api/?name=Repo&background=random&color=fff&size=256"
+  },
+  {
+    "id": "84",
+    "title": "That's Not My Neighbor",
+    "description": "Play That's Not My Neighbor on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/thatsnotmyneighbor/index.html",
+    "image": "https://ui-avatars.com/api/?name=That's%20Not%20My%20Neighbor&background=random&color=fff&size=256"
+  },
+  {
+    "id": "85",
+    "title": "Velocity Rush",
+    "description": "Play Velocity Rush on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/velocity-rush/index.html",
+    "image": "https://ui-avatars.com/api/?name=Velocity%20Rush&background=random&color=fff&size=256"
+  },
+  {
+    "id": "86",
+    "title": "Omori",
+    "description": "Play Omori on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/omori/index.html",
+    "image": "https://ui-avatars.com/api/?name=Omori&background=random&color=fff&size=256"
+  },
+  {
+    "id": "87",
+    "title": "Super Mario 64",
+    "description": "Play Super Mario 64 on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/sm64/index.html",
+    "image": "https://ui-avatars.com/api/?name=Super%20Mario%2064&background=random&color=fff&size=256"
+  },
+  {
+    "id": "88",
+    "title": "Papa's Pizzeria",
+    "description": "Play Papa's Pizzeria on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/papaspizzaria/index.html",
+    "image": "https://ui-avatars.com/api/?name=Papa's%20Pizzeria&background=random&color=fff&size=256"
+  },
+  {
+    "id": "89",
+    "title": "Papa's Burgeria",
+    "description": "Play Papa's Burgeria on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/papasburgeria/index.html",
+    "image": "https://ui-avatars.com/api/?name=Papa's%20Burgeria&background=random&color=fff&size=256"
+  },
+  {
+    "id": "90",
+    "title": "Slope",
+    "description": "Play Slope on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/slope/index.html",
+    "image": "https://ui-avatars.com/api/?name=Slope&background=random&color=fff&size=256"
+  },
+  {
+    "id": "91",
+    "title": "Subway Surfers",
+    "description": "Play Subway Surfers on AlphaOS",
+    "url": "https://mathv2.b-cdn.net/study/subwaysurfers/index.html",
+    "image": "https://ui-avatars.com/api/?name=Subway%20Surfers&background=random&color=fff&size=256"
   }
 ]

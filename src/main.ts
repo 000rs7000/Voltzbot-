@@ -1,13 +1,31 @@
 import './index.css';
 import { Game, Theme } from './types.ts';
 
+interface App {
+  id: string;
+  title: string;
+  url: string;
+  image: string;
+}
+
+const defaultApps: App[] = [
+  { id: '1', title: 'Google', url: 'https://www.google.com/webhp?igu=1', image: 'https://ui-avatars.com/api/?name=Google&background=fff&color=000&size=256' },
+  { id: '2', title: 'Discord', url: 'https://discord.com/login', image: 'https://ui-avatars.com/api/?name=Discord&background=5865F2&color=fff&size=256' },
+  { id: '3', title: 'YouTube', url: 'https://www.youtube.com/embed/', image: 'https://ui-avatars.com/api/?name=YouTube&background=FF0000&color=fff&size=256' },
+  { id: '4', title: 'Wikipedia', url: 'https://en.wikipedia.org/', image: 'https://ui-avatars.com/api/?name=Wiki&background=fff&color=000&size=256' }
+];
+
 // State
 let allGames: Game[] = [];
+let allApps: App[] = defaultApps;
 let theme: Theme = (localStorage.getItem('theme') as Theme) || 'dark';
 let isCloaked: boolean = localStorage.getItem('isCloaked') === 'true';
 
 // Elements
 const gameGrid = document.getElementById('game-grid')!;
+const gameGridContainer = document.getElementById('game-grid-container')!;
+const appGrid = document.getElementById('app-grid')!;
+const appGridContainer = document.getElementById('app-grid-container')!;
 const searchInput = document.getElementById('search-input') as HTMLInputElement;
 const noResults = document.getElementById('no-results')!;
 const gameViewer = document.getElementById('game-viewer')!;
@@ -15,7 +33,6 @@ const gameIframe = document.getElementById('game-iframe') as HTMLIFrameElement;
 const viewerTitle = document.getElementById('viewer-title')!;
 const closeGameBtn = document.getElementById('close-game')!;
 const fullscreenBtn = document.getElementById('fullscreen-btn')!;
-const externalLink = document.getElementById('external-link') as HTMLAnchorElement;
 const settingsBtn = document.getElementById('settings-btn')!;
 const settingsModal = document.getElementById('settings-modal')!;
 const modalOverlay = document.getElementById('modal-overlay')!;
@@ -26,14 +43,116 @@ const cloakDot = cloakToggle.querySelector('.dot')!;
 const themeButtons = document.querySelectorAll('.theme-btn');
 const mainFooter = document.getElementById('main-footer')!;
 const logo = document.getElementById('logo')!;
+const starsCanvas = document.getElementById('stars-canvas') as HTMLCanvasElement;
+const customBg = document.getElementById('custom-bg')!;
+const bgUrlInput = document.getElementById('bg-url-input') as HTMLInputElement;
+const applyBgBtn = document.getElementById('apply-bg-btn')!;
+const resetBgBtn = document.getElementById('reset-bg-btn')!;
+const tbClock = document.getElementById('tb-clock')!;
+const tbGamesBtn = document.getElementById('tb-games-btn')!;
+const tbAppsBtn = document.getElementById('tb-apps-btn')!;
+const tbThemesBtn = document.getElementById('tb-themes-btn')!;
+const startBtn = document.getElementById('start-btn')!;
 
 // Initialization
 async function init() {
   await fetchGames();
   applyTheme(theme);
+  
+  // Load custom background
+  const savedBg = localStorage.getItem('customBg');
+  if (savedBg) {
+    applyCustomBg(savedBg);
+  }
+
   applyCloak(isCloaked);
   renderGames(allGames);
+  renderApps(allApps);
   setupEventListeners();
+  initBackgroundStars();
+  initFunnyText();
+  startClock();
+
+  setTimeout(() => {
+    const loader = document.getElementById('loading-screen');
+    if (loader) {
+      loader.classList.add('opacity-0');
+      setTimeout(() => loader.classList.add('hidden'), 500);
+    }
+  }, 1000);
+}
+
+function initBackgroundStars() {
+  if (!starsCanvas) return;
+  const ctx = starsCanvas.getContext('2d');
+  if (!ctx) return;
+
+  // Make canvas visible if no custom bg
+  if (!localStorage.getItem('customBg')) {
+    starsCanvas.style.opacity = '1';
+  } else {
+    starsCanvas.style.opacity = '0';
+  }
+
+  let width = window.innerWidth;
+  let height = window.innerHeight;
+  starsCanvas.width = width;
+  starsCanvas.height = height;
+
+  const numStars = 800; // lots of stars for deep space
+  const stars: { x: number, y: number, z: number }[] = [];
+
+  for (let i = 0; i < numStars; i++) {
+    stars.push({
+      x: Math.random() * width * 2 - width,
+      y: Math.random() * height * 2 - height,
+      z: Math.random() * width
+    });
+  }
+
+  function render() {
+    ctx!.clearRect(0, 0, width, height);
+
+    const cx = width / 2;
+    const cy = height / 2;
+
+    for (let i = 0; i < numStars; i++) {
+      const star = stars[i];
+
+      star.z -= 1.0; // speed of moving forward through stars
+
+      if (star.z <= 0) {
+        star.z = width;
+        star.x = Math.random() * width * 2 - width;
+        star.y = Math.random() * height * 2 - height;
+      }
+
+      const x = cx + star.x / (star.z / width);
+      const y = cy + star.y / (star.z / width);
+      const radius = (1 - star.z / width) * 3;
+
+      // Draw star
+      if (x >= 0 && x <= width && y >= 0 && y <= height) {
+        ctx!.beginPath();
+        const intensity = Math.min(1, 1.5 - (star.z / width));
+        ctx!.fillStyle = `rgba(255, 255, 255, ${intensity})`;
+        ctx!.arc(x, y, radius, 0, Math.PI * 2);
+        ctx!.fill();
+      }
+    }
+
+    requestAnimationFrame(render);
+  }
+
+  // Handle Resize
+  window.addEventListener('resize', () => {
+    width = window.innerWidth;
+    height = window.innerHeight;
+    starsCanvas.width = width;
+    starsCanvas.height = height;
+  });
+
+  render();
 }
 
 async function fetchGames() {
@@ -69,6 +188,28 @@ async function fetchGames() {
   }
 }
 
+function applyCustomBg(url: string) {
+  if (url) {
+    customBg.style.backgroundImage = `url('${url}')`;
+    customBg.classList.remove('hidden');
+    customBg.style.opacity = '1';
+    starsCanvas.style.opacity = '0';
+    localStorage.setItem('customBg', url);
+    if (bgUrlInput) bgUrlInput.value = url;
+  }
+}
+
+function resetCustomBg() {
+  customBg.style.opacity = '0';
+  setTimeout(() => {
+    customBg.classList.add('hidden');
+    customBg.style.backgroundImage = '';
+  }, 500);
+  starsCanvas.style.opacity = '1';
+  localStorage.removeItem('customBg');
+  if (bgUrlInput) bgUrlInput.value = '';
+}
+
 function renderGames(games: Game[]) {
   gameGrid.innerHTML = '';
   if (games.length === 0) {
@@ -77,21 +218,21 @@ function renderGames(games: Game[]) {
     noResults.classList.add('hidden');
     games.forEach(game => {
       const card = document.createElement('div');
-      card.className = 'card rounded-2xl overflow-hidden group cursor-pointer hover:scale-[1.02] transition-transform shadow-xl hover:shadow-[var(--accent)]/10';
+      card.className = 'card rounded-2xl overflow-hidden group cursor-pointer border border-[var(--border)] hover:border-[var(--accent)] transition-all bg-[var(--surface)] hover:shadow-[0_0_20px_var(--accent)] flex items-center p-3 gap-4';
       card.innerHTML = `
-        <div class="aspect-video relative overflow-hidden">
+        <div class="w-24 h-24 shrink-0 rounded-xl overflow-hidden relative border border-[var(--border)]">
           <img 
             src="${game.image}" 
             alt="${game.title}" 
             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
             referrerPolicy="no-referrer"
           />
-          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
-            <p class="text-white text-sm font-medium">Click to Play</p>
+          <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="white" class="translate-x-[2px]"><polygon points="5 3 19 12 5 21 5 3"/></svg>
           </div>
         </div>
-        <div class="p-4">
-          <h3 class="text-lg font-bold font-display mb-1 group-hover:accent-text transition-colors">${game.title}</h3>
+        <div class="flex-1 min-w-0 pr-4">
+          <h3 class="text-xl font-bold font-display truncate mb-1 group-hover:accent-text transition-colors">${game.title}</h3>
           <p class="text-sm opacity-60 line-clamp-2">${game.description}</p>
         </div>
       `;
@@ -104,9 +245,43 @@ function renderGames(games: Game[]) {
 function openGame(game: Game) {
   viewerTitle.textContent = game.title;
   gameIframe.src = game.url;
-  externalLink.href = game.url;
   gameViewer.classList.remove('hidden');
   gameViewer.classList.add('flex');
+}
+
+function openApp(app: App) {
+  viewerTitle.textContent = app.title;
+  gameIframe.src = app.url;
+  gameViewer.classList.remove('hidden');
+  gameViewer.classList.add('flex');
+}
+
+function renderApps(apps: App[]) {
+  if (!appGrid) return;
+  appGrid.innerHTML = '';
+  apps.forEach(app => {
+    const card = document.createElement('div');
+    card.className = 'card rounded-2xl overflow-hidden group cursor-pointer border border-[var(--border)] hover:border-[var(--accent)] transition-all bg-[var(--surface)] hover:shadow-[0_0_20px_var(--accent)] flex items-center p-3 gap-4';
+    card.innerHTML = `
+      <div class="w-24 h-24 shrink-0 rounded-xl overflow-hidden relative border border-[var(--border)]">
+        <img 
+          src="${app.image}" 
+          alt="${app.title}" 
+          class="w-full h-full object-cover"
+          loading="lazy"
+          referrerPolicy="no-referrer"
+        />
+        <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+        </div>
+      </div>
+      <div class="flex-1 min-w-0 pr-4">
+        <h3 class="text-xl font-bold font-display truncate mb-1 group-hover:accent-text transition-colors text-[var(--text)]">${app.title}</h3>
+      </div>
+    `;
+    card.onclick = () => openApp(app);
+    appGrid.appendChild(card);
+  });
 }
 
 function closeGame() {
@@ -148,7 +323,7 @@ function applyCloak(cloaked: boolean) {
     cloakToggle.classList.remove('bg-gray-400');
     cloakDot.classList.add('translate-x-6');
   } else {
-    document.title = "Volt Unblocked";
+    document.title = "AlphaOS";
     const link = document.querySelector("link[rel~='icon']") as HTMLLinkElement;
     if (link) link.href = "/favicon.ico";
     
@@ -158,16 +333,79 @@ function applyCloak(cloaked: boolean) {
   }
 }
 
+const funnyTexts = [
+  "having fun tryna block me Dr. Alejandro Ruvalcaba ?",
+  "And AlphaOS will never be blocked!",
+  "Nice try, IT department.",
+  "Unblockable since day 1.",
+  "Running under the radar...",
+  "Your firewall means nothing here."
+];
+let funnyTextIndex = 0;
+
+function initFunnyText() {
+  const funnyTextEl = document.getElementById('funny-text');
+  if (!funnyTextEl) return;
+  
+  funnyTextEl.textContent = funnyTexts[0];
+  setInterval(() => {
+    funnyTextEl.style.opacity = '0';
+    setTimeout(() => {
+      funnyTextIndex = (funnyTextIndex + 1) % funnyTexts.length;
+      funnyTextEl.textContent = funnyTexts[funnyTextIndex];
+      funnyTextEl.style.opacity = '1';
+    }, 500);
+  }, 4000);
+}
+
 function setupEventListeners() {
   // Search
   searchInput.oninput = (e) => {
     const query = (e.target as HTMLInputElement).value.toLowerCase();
-    const filtered = allGames.filter(g => 
-      g.title.toLowerCase().includes(query) || 
-      g.description.toLowerCase().includes(query)
-    );
-    renderGames(filtered);
+    
+    if (!gameGridContainer.classList.contains('hidden')) {
+      const filtered = allGames.filter(g => 
+        g.title.toLowerCase().includes(query) || 
+        g.description.toLowerCase().includes(query)
+      );
+      renderGames(filtered);
+    } else if (!appGridContainer.classList.contains('hidden')) {
+      const filtered = allApps.filter(a => a.title.toLowerCase().includes(query));
+      renderApps(filtered);
+    }
   };
+
+  // Background Settings
+  applyBgBtn.onclick = () => {
+    const url = bgUrlInput.value.trim();
+    if (url) {
+      applyCustomBg(url);
+    }
+  };
+  
+  resetBgBtn.onclick = () => {
+    resetCustomBg();
+  };
+
+  // Taskbar buttons
+  tbGamesBtn.onclick = () => {
+    gameGridContainer.classList.remove('hidden');
+    appGridContainer.classList.add('hidden');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    searchInput.value = '';
+    renderGames(allGames);
+  };
+
+  tbAppsBtn.onclick = () => {
+    gameGridContainer.classList.add('hidden');
+    appGridContainer.classList.remove('hidden');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    searchInput.value = '';
+    renderApps(allApps);
+  };
+
+  tbThemesBtn.onclick = () => settingsModal.classList.remove('hidden');
+  startBtn.onclick = () => settingsModal.classList.remove('hidden');
 
   // UI Handlers
   logo.onclick = () => {
@@ -194,6 +432,16 @@ function setupEventListeners() {
   themeButtons.forEach(btn => {
     btn.onclick = () => applyTheme(btn.getAttribute('data-theme') as Theme);
   });
+}
+
+function startClock() {
+  if (!tbClock) return;
+  const updateClock = () => {
+    const now = new Date();
+    tbClock.textContent = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+  };
+  updateClock();
+  setInterval(updateClock, 1000);
 }
 
 init();

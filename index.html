@@ -3,16 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Google AI Studio App</title>
+    <title>AlphaOS</title>
   </head>
   <body>
-    <div id="app" class="min-h-screen">
+    <canvas id="stars-canvas" class="fixed inset-0 z-[-2] pointer-events-none w-full h-full opacity-100"></canvas>
+    <div id="custom-bg" class="fixed inset-0 z-[-3] bg-cover bg-center bg-no-repeat transition-opacity duration-500 opacity-0"></div>
+    <div id="loading-screen" class="fixed inset-0 z-[100] bg-[var(--bg)] flex flex-col items-center justify-center font-display transition-opacity duration-500">
+      <div class="w-16 h-16 border-4 border-[var(--border)] border-t-[var(--accent)] rounded-full animate-spin mb-6"></div>
+      <h1 class="text-5xl font-bold tracking-tighter uppercase mb-2">Alpha<span class="accent-text">OS</span></h1>
+      <p class="text-sm font-mono opacity-80">Loading system modules...</p>
+    </div>
+    <div id="app" class="min-h-screen pb-14">
       <!-- Header -->
       <header class="sticky top-0 z-10 border-b border-[var(--border)] bg-[var(--bg)]/80 backdrop-blur-md px-6 py-4">
         <div class="max-w-7xl mx-auto flex items-center justify-between gap-4">
           <div id="logo" class="flex items-center gap-2 cursor-pointer">
-            <div class="w-10 h-10 accent-bg rounded-lg flex items-center justify-center text-white font-bold text-xl">V</div>
-            <h1 class="hidden sm:block text-xl font-display font-bold tracking-tighter uppercase">Volt <span class="accent-text">Unblocked</span></h1>
+            <div class="w-10 h-10 accent-bg rounded-lg flex items-center justify-center text-white font-bold text-xl">A</div>
+            <h1 class="hidden sm:block text-xl font-display font-bold tracking-tighter uppercase">Alpha<span class="accent-text">OS</span></h1>
           </div>
 
           <div class="flex-1 max-w-xl relative">
@@ -34,14 +41,27 @@
         </div>
       </header>
 
+      <!-- Funny Text -->
+      <div class="max-w-7xl mx-auto px-6 pt-6 pb-2 text-center h-16 flex items-center justify-center">
+        <p id="funny-text" class="text-sm md:text-lg font-mono font-medium accent-text transition-opacity duration-500"></p>
+      </div>
+
       <!-- Main Game Grid -->
-      <main id="game-grid-container" class="max-w-7xl mx-auto px-6 py-8">
-        <div id="game-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      <main id="game-grid-container" class="max-w-7xl mx-auto px-6 pb-8 view-section">
+        <div id="game-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 border border-[var(--border)] backdrop-blur-sm bg-black/20 rounded-3xl p-6">
           <!-- Games injected here -->
         </div>
         <div id="no-results" class="hidden text-center py-20 opacity-50">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search w-12 h-12 mx-auto mb-4"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
           <p class="text-xl">No games found matching your search.</p>
+        </div>
+      </main>
+
+      <!-- Apps Grid -->
+      <main id="app-grid-container" class="max-w-7xl mx-auto px-6 pb-8 view-section hidden">
+        <h2 class="text-3xl font-display font-bold tracking-tighter mb-4 px-2">Apps</h2>
+        <div id="app-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 border border-[var(--border)] backdrop-blur-sm bg-black/20 rounded-3xl p-6">
+          <!-- Apps injected here -->
         </div>
       </main>
 
@@ -58,9 +78,6 @@
             <button id="fullscreen-btn" class="p-2 hover:bg-[var(--surface)] rounded-lg transition-colors" title="Fullscreen">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-maximize w-5 h-5"><path d="M8 3H5a2 2 0 0 0-2 2v3"/><path d="M21 8V5a2 2 0 0 0-2-2h-3"/><path d="M3 16v3a2 2 0 0 0 2 2h3"/><path d="M16 21h3a2 2 0 0 0 2-2v-3"/></svg>
             </button>
-            <a id="external-link" href="#" target="_blank" rel="noreferrer" class="p-2 hover:bg-[var(--surface)] rounded-lg transition-colors" title="Open in new tab">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link w-5 h-5"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
-            </a>
           </div>
         </div>
         <div class="flex-1 bg-black overflow-hidden relative">
@@ -95,7 +112,27 @@
                   <button data-theme="dark" class="theme-btn px-4 py-3 rounded-xl border-2 border-[var(--border)] bg-[var(--surface)] hover:border-[var(--accent)]/50 transition-all capitalize font-medium text-[var(--text)]">Dark</button>
                   <button data-theme="retro" class="theme-btn px-4 py-3 rounded-xl border-2 border-[var(--border)] bg-[var(--surface)] hover:border-[var(--accent)]/50 transition-all capitalize font-medium text-[var(--text)]">Retro</button>
                   <button data-theme="cyberpunk" class="theme-btn px-4 py-3 rounded-xl border-2 border-[var(--border)] bg-[var(--surface)] hover:border-[var(--accent)]/50 transition-all capitalize font-medium text-[var(--text)]">Cyberpunk</button>
+                  <button data-theme="sakura" class="theme-btn px-4 py-3 rounded-xl border-2 border-[var(--border)] bg-[var(--surface)] hover:border-[var(--accent)]/50 transition-all capitalize font-medium text-[var(--text)]">Sakura</button>
+                  <button data-theme="ocean" class="theme-btn px-4 py-3 rounded-xl border-2 border-[var(--border)] bg-[var(--surface)] hover:border-[var(--accent)]/50 transition-all capitalize font-medium text-[var(--text)]">Ocean</button>
+                  <button data-theme="forest" class="theme-btn px-4 py-3 rounded-xl border-2 border-[var(--border)] bg-[var(--surface)] hover:border-[var(--accent)]/50 transition-all capitalize font-medium text-[var(--text)]">Forest</button>
+                  <button data-theme="sunset" class="theme-btn px-4 py-3 rounded-xl border-2 border-[var(--border)] bg-[var(--surface)] hover:border-[var(--accent)]/50 transition-all capitalize font-medium text-[var(--text)]">Sunset</button>
+                  <button data-theme="midnight" class="theme-btn px-4 py-3 rounded-xl border-2 border-[var(--border)] bg-[var(--surface)] hover:border-[var(--accent)]/50 transition-all capitalize font-medium text-[var(--text)]">Midnight</button>
+                  <button data-theme="neon" class="theme-btn px-4 py-3 rounded-xl border-2 border-[var(--border)] bg-[var(--surface)] hover:border-[var(--accent)]/50 transition-all capitalize font-medium text-[var(--text)]">Neon</button>
+                  <button data-theme="halloween" class="theme-btn px-4 py-3 rounded-xl border-2 border-[var(--border)] bg-[var(--surface)] hover:border-[var(--accent)]/50 transition-all capitalize font-medium text-[var(--text)]">Halloween</button>
+                  <button data-theme="winter" class="theme-btn px-4 py-3 rounded-xl border-2 border-[var(--border)] bg-[var(--surface)] hover:border-[var(--accent)]/50 transition-all capitalize font-medium text-[var(--text)]">Winter</button>
+                  <button data-theme="dessert" class="theme-btn px-4 py-3 rounded-xl border-2 border-[var(--border)] bg-[var(--surface)] hover:border-[var(--accent)]/50 transition-all capitalize font-medium text-[var(--text)]">Dessert</button>
+                  <button data-theme="obsidian" class="theme-btn px-4 py-3 rounded-xl border-2 border-[var(--border)] bg-[var(--surface)] hover:border-[var(--accent)]/50 transition-all capitalize font-medium text-[var(--text)]">Obsidian</button>
                 </div>
+              </section>
+
+              <!-- Custom Background -->
+              <section class="mt-6">
+                <label class="block text-sm font-bold uppercase tracking-wider opacity-50 mb-2">Custom Background URL</label>
+                <div class="flex gap-2">
+                  <input type="text" id="bg-url-input" class="flex-1 bg-[var(--surface)] border border-[var(--border)] rounded-xl px-4 py-2 text-[var(--text)] outline-none focus:border-[var(--accent)] transition-colors" placeholder="https://example.com/image.jpg">
+                  <button id="apply-bg-btn" class="px-4 py-2 bg-[var(--accent)] text-white rounded-xl font-medium hover:opacity-90 transition-opacity">Apply</button>
+                </div>
+                <button id="reset-bg-btn" class="mt-2 text-sm text-[var(--accent)] hover:underline">Reset to Default Space Background</button>
               </section>
 
               <!-- Tab Cloak Toggle -->
@@ -128,12 +165,35 @@
 
       <!-- Footer -->
       <footer id="main-footer" class="max-w-7xl mx-auto px-6 py-12 border-t border-[var(--border)] opacity-50 text-sm flex flex-col sm:flex-row justify-between items-center gap-4">
-        <p>&copy; 2026 Volt Unblocked. All games are property of their respective owners.</p>
+        <p>&copy; 2026 AlphaOS. All games are property of their respective owners.</p>
         <div class="flex gap-6">
           <button class="hover:accent-text transition-colors">Privacy Policy</button>
           <button class="hover:accent-text transition-colors">Terms of Service</button>
         </div>
       </footer>
+    </div>
+
+    <!-- Taskbar -->
+    <div id="taskbar" class="fixed bottom-0 left-0 right-0 h-14 bg-black/50 backdrop-blur-xl border-t border-white/10 z-[200] flex items-center px-4 gap-2">
+      <button id="start-btn" class="h-10 px-4 rounded-md hover:bg-white/10 transition-colors flex items-center gap-2 font-display font-bold text-white">
+        <div class="w-6 h-6 bg-[var(--accent)] rounded-sm flex items-center justify-center text-white text-xs">A</div>
+        Start
+      </button>
+      <div class="h-8 w-px bg-white/20 mx-2"></div>
+      <button id="tb-games-btn" class="h-10 px-4 rounded-md hover:bg-white/10 transition-colors flex items-center gap-2 text-white/90">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" x2="10" y1="12" y2="12"/><line x1="8" x2="8" y1="10" y2="14"/><line x1="15" x2="15.01" y1="13" y2="13"/><line x1="18" x2="18.01" y1="11" y2="11"/><rect width="20" height="12" x="2" y="6" rx="2"/></svg>
+        Games
+      </button>
+      <button id="tb-apps-btn" class="h-10 px-4 rounded-md hover:bg-white/10 transition-colors flex items-center gap-2 text-white/90">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>
+        Apps
+      </button>
+      <button id="tb-themes-btn" class="h-10 px-4 rounded-md hover:bg-white/10 transition-colors flex items-center gap-2 text-white/90">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>
+        Themes
+      </button>
+      <div class="flex-1"></div>
+      <div id="tb-clock" class="text-sm font-mono opacity-80 px-4 text-white"></div>
     </div>
     <script type="module" src="/src/main.ts"></script>
   </body>
